@@ -2,17 +2,17 @@ name: Scrape Images and Send Email
 
 on:
   schedule:
-    - cron: '1 3 * * *'  # 매일 자정마다 실행
+    - cron: '7 3 * * *'  # 매일 자정마다 실행
 
 jobs:
   scrape_and_email:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.12.3'
 
