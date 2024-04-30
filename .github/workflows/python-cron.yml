@@ -24,7 +24,7 @@ jobs:
       run: python 5.py
 
     - name: Send email notification on success or failure
-      uses: dawidd6/action-send-mail
+      uses: ad-m/github-push-action@master
       if: always()  # 항상 실행
       with:
         server_address: smtp.example.com
