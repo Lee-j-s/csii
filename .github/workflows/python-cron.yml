@@ -2,14 +2,13 @@ name: Scrape Images and Send Email
 
 on:
   schedule:
-    - cron: '57 2 * * *'  # 매일 자정마다 실행
+    - cron: '59 2 * * *'  # 매일 자정마다 실행
 
 jobs:
   scrape_and_email:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Set up Python
@@ -30,7 +29,7 @@ jobs:
           FLASK_ENV: development
 
       - name: Send email
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail
         with:
           server_address: smtp.example.com
           server_port: 587
