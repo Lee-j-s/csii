@@ -2,7 +2,7 @@ name: Python Cron Job
 
 on:
   schedule:
-    - cron: '35 1 * * *'  # 매일 오전 12시 30분에 실행 (UTC 기준)
+    - cron: '44 1 * * *'  # 매일 오전 12시 30분에 실행 (UTC 기준)
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3  # 버전 3으로 업그레이드
       with:
         python-version: '3.12.3'
 
@@ -36,7 +36,7 @@ jobs:
           Your GitHub Actions workflow has completed.
           Status: ${{ job.status }}
         to: ashfejd12@naver.com
-      env:  # 환경 변수 설정
+      env:
         EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
