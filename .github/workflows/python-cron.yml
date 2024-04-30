@@ -24,7 +24,7 @@ jobs:
       run: python 5.py
 
     - name: Send email notification on success or failure
-      uses: ashfejd12@naevr.com
+      uses: dawidd6/action-send-mail
       if: always()  # 항상 실행
       with:
         server_address: smtp.example.com
