@@ -2,7 +2,7 @@ name: Update Image URLs
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 매일 자정마다 실행
+    - cron: '18 3 * * *'  # 매일 자정마다 실행
 
 jobs:
   scrape_and_commit:
